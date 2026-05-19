@@ -91,15 +91,15 @@ const resumo = `
 🍷 ADEGA — RELATÓRIO DE ESTOQUE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-📋 VINHOS CADASTRADOS (${vinhos.length} itens):
+ Vinhos cadastrados (${vinhos.length} itens):
 ${vinhos.map((v, i) => `  ${i + 1}. ${v.nome} | ${v.tipo} | ${v.safra} | ${v.estoque} un.`).join("\n")}
 
-⚠️  ESTOQUE CRÍTICO (< 5 unidades):
+  Estoque crítico:
 ${baixoEstoque.length > 0 ? baixoEstoque.map((v) => `  ⛔ ${v.nome}: ${v.estoque} un.`).join("\n") : "  ✅ Nenhum vinho crítico"}
 
-📦 ESTOQUE TOTAL: ${estoqueTotal} unidades
+ Estoque final: ${estoqueTotal} unidades
 
-🔠 NOMES EM CAIXA ALTA:
+Nomes em caixa alta:
 ${nomesAlta.map((n) => `  → ${n}`).join("\n")}
 `;
 
