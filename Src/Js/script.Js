@@ -20,12 +20,12 @@ const vinhos = [
 function adicionarVinho(nome, tipo, safra, estoque) {
   const novoVinho = { nome, tipo, safra, estoque };
   vinhos.push(novoVinho);
-  console.log(`✅ Vinho adicionado: ${nome} (${tipo}, ${safra}) — Estoque: ${estoque}`);
+  console.log(`Vinho adicionado: ${nome} (${tipo}, ${safra}) — Estoque: ${estoque}`);
 }
 
 // Listar todos os vinhos com forEach
 function listarVinhos() {
-  console.log("\n📋 ===== LISTA COMPLETA DE VINHOS =====");
+  console.log("\n ===== LISTA COMPLETA DE VINHOS =====");
   vinhos.forEach((vinho, index) => {
     console.log(
       `[${index + 1}] ${vinho.nome} | Tipo: ${vinho.tipo} | Safra: ${vinho.safra} | Estoque: ${vinho.estoque} unidades`
@@ -37,13 +37,13 @@ function listarVinhos() {
 function vinhosBaixoEstoque(limite = 5) {
   const criticos = vinhos.filter((vinho) => vinho.estoque < limite);
 
-  console.log(`\n⚠️  ===== VINHOS COM ESTOQUE ABAIXO DE ${limite} =====`);
+  console.log(`\n  ===== VINHOS COM ESTOQUE ABAIXO DE ${limite} =====`);
   if (criticos.length === 0) {
     console.log("Nenhum vinho com estoque crítico.");
   } else {
     criticos.forEach((vinho) => {
       console.log(
-        `⛔ ${vinho.nome} — Estoque: ${vinho.estoque} unidades (repor com urgência)`
+        ` ${vinho.nome} — Estoque: ${vinho.estoque} unidades (repor com urgência)`
       );
     });
   }
@@ -53,7 +53,7 @@ function vinhosBaixoEstoque(limite = 5) {
 // Estoque total com reduce
 function calcularEstoqueTotal() {
   const total = vinhos.reduce((acumulador, vinho) => acumulador + vinho.estoque, 0);
-  console.log(`\n📦 ===== ESTOQUE TOTAL DA ADEGA =====`);
+  console.log(`\n ===== ESTOQUE TOTAL DA ADEGA =====`);
   console.log(`Total: ${total} unidades em estoque`);
   return total;
 }
@@ -61,7 +61,7 @@ function calcularEstoqueTotal() {
 // Nomes dos vinhos em caixa alta com map
 function nomesEmCaixaAlta() {
   const nomes = vinhos.map((vinho) => vinho.nome.toUpperCase());
-  console.log(`\n🔠 ===== NOMES DOS VINHOS EM CAIXA ALTA =====`);
+  console.log(`\n ===== NOMES DOS VINHOS EM CAIXA ALTA =====`);
   nomes.forEach((nome) => console.log(`  → ${nome}`));
   return nomes;
 }
